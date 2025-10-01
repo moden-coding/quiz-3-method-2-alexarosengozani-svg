@@ -55,20 +55,34 @@
 
 public class App {
 
-    public static void computePerimeter() {
-
+    public static int computePerimeter(String shape, int x, int y) {
+        if (x < 0 || y < 0) {
+            return -1;
+        }else if (x > 100 || y > 100) {
+            return -1;
+        }else{
+            if (shape.equals("rect")) {
+                int perim = 2 * (x + y);
+                return perim; 
+            }else if (shape.equals("square")){
+                int value = 4 * x;
+                return value;
+            }else{
+                return -1;
+            }
+        }
     }
     public static void main(String[] args) {
-        // B- range
+        // // B- range
         // System.out.println("Task 1:");
-        // computePerimeter(); // should PRINT 20
+        // computePerimeter(6,4); // should PRINT 20
 
         // B range
         // System.out.println("Task 2:");
         // computePerimeter(5, 3);  // should PRINT 16
         // computePerimeter(10, 2); // should PRINT 24
 
-        // B+ range
+        // // B+ range
         // System.out.println("Task 3:");
         // int p1 = computePerimeter(5, 3);  // expect 16
         // int p2 = computePerimeter(10, 2); // expect 24
@@ -82,11 +96,11 @@ public class App {
         // System.out.println(computePerimeter(101, 1)); // -1 (too large)
 
         // A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(computePerimeter("rect", 5, 3));   // 16
-        // System.out.println(computePerimeter("square", 7, 0)); // 28
-        // System.out.println(computePerimeter("hex", 2, 2));    // -1 (unknown)
-        // System.out.println(computePerimeter("rect", -1, 9));  // -1 (invalid)
+        System.out.println("Task 5:");
+        System.out.println(computePerimeter("rect", 5, 3));   // 16
+        System.out.println(computePerimeter("square", 7, 0)); // 28
+        System.out.println(computePerimeter("hex", 2, 2));    // -1 (unknown)
+        System.out.println(computePerimeter("rect", -1, 9));  // -1 (invalid)
     }
 }
 
